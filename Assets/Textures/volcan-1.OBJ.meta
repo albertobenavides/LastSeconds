@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 70273a63c13d96e4aa90769ee50d3fed
+guid: c26581dfc603ab847a683e1d2b1a7492
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Group1
-    100002: //RootNode
-    400000: Group1
-    400002: //RootNode
-    2300000: Group1
-    3300000: Group1
-    4300000: Group1
+    100000: //RootNode
+    100002: ZBrush_defualt_group
+    400000: //RootNode
+    400002: ZBrush_defualt_group
+    2300000: ZBrush_defualt_group
+    3300000: ZBrush_defualt_group
+    4300000: ZBrush_defualt_group
     9500000: //RootNode
   materials:
     importMaterials: 1

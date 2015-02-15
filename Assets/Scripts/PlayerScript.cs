@@ -24,11 +24,6 @@ public class PlayerScript : MonoBehaviour {
 
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-    }
 
     void Awake()
     {

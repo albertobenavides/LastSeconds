@@ -51,7 +51,7 @@ public class MeteorScript : MonoBehaviour {
 			timeAux += Time.deltaTime;
 		}
 
-		if (meteorsToShow < 1) 
+		if (meteorsToShow == 0 && !GameObject.FindGameObjectWithTag("Meteor"))
         {
             win = true;
 		}

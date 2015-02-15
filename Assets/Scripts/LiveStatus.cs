@@ -6,11 +6,16 @@ public class LiveStatus : MonoBehaviour {
     public Sprite [] Lives;
     PlayerScript player;
     float timer;
+    int rando;
 
 	void Start () 
     {
         player = GameObject.Find("PlayerStats").GetComponent<PlayerScript>();
         timer = 0;
+        rando = player.lastLevelPlayed;
+        Random.seed = (int)System.DateTime.Now.Ticks;
+        while (rando == player.lastLevelPlayed)
+            rando = Random.Range(3, 11);
 	}
 	
 	void Update () 
@@ -18,12 +23,6 @@ public class LiveStatus : MonoBehaviour {
         timer += Time.deltaTime;
         gameObject.GetComponent<SpriteRenderer>().sprite = Lives[player.lives];
         if (timer > 3)
-        {
-            int rando;
-            do
-                rando = Random.Range(3, 11);
-            while (rando == player.lastLevelPlayed);
             Application.LoadLevel(rando);
-        }
 	}
 }

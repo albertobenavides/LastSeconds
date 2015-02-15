@@ -17,7 +17,8 @@ public class MenuScript : MonoBehaviour {
 		audios = GameObject.Find ("PlayerStats").GetComponents<AudioSource>();
 		audios [0].Play ();
 		audios [1].Play ();
-        Application.LoadLevel(5);// (Random.Range(3, 11));
+        Random.seed = (int)System.DateTime.Now.Ticks;
+        Application.LoadLevel(Random.Range(3, 11));
         timer = 0;
         end = once = redo = false;
     }

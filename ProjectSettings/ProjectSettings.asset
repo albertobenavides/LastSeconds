@@ -13,7 +13,7 @@ PlayerSettings:
   companyName: Cerdito Studios
   productName: Last Seconds
   defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: -0, y: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -103,8 +103,8 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: C:/Users/Monotr_/Documents/MEGAsync/My Games/keystones/lastseconds.keystore
-  AndroidKeyaliasName: cerditostudios
+  AndroidKeystoreName: C:/Users/Alberto/Google Drive/Cerdito Studios/androidKeys/LastSeconds.keystore
+  AndroidKeyaliasName: lastseconds
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
@@ -247,6 +247,8 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   stvDeviceAddress: 
+  wp8UnprocessedPlugins: []
+  intPropertyNames: []
   firstStreamedLevelWithResources: 0
   unityRebuildLibraryVersion: 9
   unityForwardCompatibleVersion: 39

@@ -19,6 +19,7 @@ public class sosScript : MonoBehaviour {
     {
         stats = GameObject.Find("PlayerStats").GetComponent<PlayerScript>();
         stats.levelsSucceded++;
+        stats.lastLevelPlayed = Application.loadedLevel;
         timer = 0;
         GameObject.Find("Capsule").renderer.material.color = Color.red;
         choice = Random.Range(1, 4);

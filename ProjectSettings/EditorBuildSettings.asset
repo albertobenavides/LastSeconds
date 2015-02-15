@@ -27,5 +27,3 @@ EditorBuildSettings:
     path: Assets/Scenes/Mist.unity
   - enabled: 1
     path: Assets/Scenes/Godzilla.unity
-  - enabled: 0
-    path: Assets/Scenes/WackAndMole.unity

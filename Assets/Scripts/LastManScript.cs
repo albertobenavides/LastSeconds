@@ -25,7 +25,7 @@ public class LastManScript : MonoBehaviour {
 	void Update () 
     {
         timer -= Time.deltaTime;
-        if (timer <= 0 && !loser)
+        if (timer <= 0 && !loser && !winer)
         {
             winer = true;
 			if(audioONCE){
@@ -42,9 +42,10 @@ public class LastManScript : MonoBehaviour {
 			}
         }
 
-        if (Input.touchCount > 0 && !winer)
+        if (Input.touchCount > 0 && !winer && !loser)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began){
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
                 loser = true;
 
 				if(soundOnce)
@@ -60,7 +61,7 @@ public class LastManScript : MonoBehaviour {
         {
             gameEnding += Time.deltaTime;
             if (gameEnding < 2)
-                GameObject.Find("Fondo").GetComponent<SpriteRenderer>().sprite = win;
+                GameObject.Find("LastMan").GetComponent<SpriteRenderer>().sprite = win;
             else if (gameEnding > 3)
                 Application.LoadLevel("Live");
         }
@@ -69,7 +70,7 @@ public class LastManScript : MonoBehaviour {
         {
             gameEnding += Time.deltaTime;
             if (gameEnding < 2)
-                GameObject.Find("Fondo").GetComponent<SpriteRenderer>().sprite = lose;
+                GameObject.Find("LastMan").GetComponent<SpriteRenderer>().sprite = lose;
             else if (gameEnding > 3)
             {
                 stats.lives--;

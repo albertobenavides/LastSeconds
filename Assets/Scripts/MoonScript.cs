@@ -6,7 +6,6 @@ public class MoonScript : MonoBehaviour {
 	public float moonSize;
 	public float moonIncreaser;
 	private float closerBitch;
-	public GameObject sizeIndicator;
     float timer;
 	private PlayerScript stats;
 	private float timerAudio, timerAudioAUX;
@@ -15,10 +14,12 @@ public class MoonScript : MonoBehaviour {
 	private bool audioONCE = true;
 
 	void Start () {
-		stats = GameObject.Find ("PlayerStats").GetComponent<PlayerScript> ();
+		stats = GameObject.Find ("PlayerStats").GetComponent<PlayerScript>();
 		stats.levelsSucceded ++;
         stats.lastLevelPlayed = Application.loadedLevel;
-		moonIncreaser = 0.3f;
+		moonIncreaser = Random.RandomRange(0.1f, 0.3f);
+        if (Random.Range(0, 2) == 1)
+            moonIncreaser = moonIncreaser * -1.0f;
         timer = 3;
 
         win = lose = false;
@@ -43,10 +44,10 @@ public class MoonScript : MonoBehaviour {
         else
             GameObject.Find("Halo").GetComponent<SpriteRenderer>().color = Color.red;
 
-		if(Input.acceleration.z > 0){
+		if(Input.acceleration.z > 0 && ! win){
 			moonSize = Mathf.Lerp(0.5f, 1, Input.acceleration.z);
 		}
-		else if(Input.acceleration.z < 0){
+		else if(Input.acceleration.z < 0 && !win){
 			moonSize = Mathf.Lerp(0.5f, 0, Mathf.Abs(Input.acceleration.z));
 		}
 
@@ -57,6 +58,7 @@ public class MoonScript : MonoBehaviour {
 
 
 		closerBitch += Time.deltaTime;
+
 		transform.localScale += new Vector3 (moonIncreaser * closerBitch,
 		                                     moonIncreaser * closerBitch, 
 		                                     moonIncreaser * closerBitch);
@@ -83,6 +85,8 @@ public class MoonScript : MonoBehaviour {
         if (win)
         {
             gameEnding += Time.deltaTime;
+            if (gameEnding > 1)
+                stats.audios[1].Stop();
             if (gameEnding > 3)
                 Application.LoadLevel("Live");
         }
